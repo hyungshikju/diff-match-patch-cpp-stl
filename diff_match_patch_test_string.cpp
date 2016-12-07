@@ -31,7 +31,19 @@ using namespace std;
 
 struct wastring : wstring  // The same as wstring, but can be constructed from char* (to use ASCII strings in the test functions)
 {
-  wastring() {}
+  wstring() {}
+  wstring(const wstring& s) : wstring(s) {}
+  wstring(const value_type* s) : wstring(s) {}
+  wstring(const value_type* s, size_t n) : wstring(s, n) {}
+  wstring(const char* s) : wstring(s, s + strlen(s)) {}
+  wstring(const char* s, size_t n) : wstring(s, s + n) {}
+  wstring operator+=(value_type c) { append(1, c); return *this; }
+  wstring operator+=(const wastring& s) { append(s); return *this; }
+  wstring operator+=(const char* s) { append(s, s + strlen(s)); return *this; }
+
+  static const wchar_t eol = L'\n';
+  static const wchar_t tab = L'\t';  
+/*  wastring() {}
   wastring(const wstring& s) : wstring(s) {}
   wastring(const value_type* s) : wstring(s) {}
   wastring(const value_type* s, size_t n) : wstring(s, n) {}
@@ -42,7 +54,7 @@ struct wastring : wstring  // The same as wstring, but can be constructed from c
   wastring operator+=(const char* s) { append(s, s + strlen(s)); return *this; }
 
   static const wchar_t eol = L'\n';
-  static const wchar_t tab = L'\t';
+  static const wchar_t tab = L'\t';  */
 };
 
 inline wastring operator+(const wastring& s, const char* p) { return s + wastring(p); }
