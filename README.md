@@ -2,7 +2,7 @@ diff-match-patch-cpp-stl
 ========================
 
 [![Build Status](https://travis-ci.org/cs933621/diff-match-patch-cpp-stl.png)](https://travis-ci.org/cs933621/diff-match-patch-cpp-stl)
-
+ 
 C++ STL variant of https://code.google.com/p/google-diff-match-patch.
 
 STL Port was done by Sergey Nozhenko (snhere@gmail.com) and posted on
