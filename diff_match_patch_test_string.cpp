@@ -42,7 +42,7 @@ struct wastring : wstring  // The same as wstring, but can be constructed from c
   wastring operator+=(const char* s) { append(s, s + strlen(s)); return *this; }
 
   static const wchar_t eol = L'\n';
-  static const wchar_t tab = L'\t';
+  static const wchar_t tab = L'\t';  
 };
 
 inline wastring operator+(const wastring& s, const char* p) { return s + wastring(p); }
