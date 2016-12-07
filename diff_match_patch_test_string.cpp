@@ -20,8 +20,8 @@
  * Diff Match and Patch -- Test Harness using std::string
  * http://code.google.com/p/google-diff-match-patch/
  */
-// pull request 테스트용 소스 수정
-//#include "diff_match_patch.h"
+
+#include "diff_match_patch.h"
 #include <cstring>
 #include <iomanip>
 #include <iostream>
